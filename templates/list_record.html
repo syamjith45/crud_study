@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>List Records</title>
+</head>
+<body>
+    <h2>List Records</h2>
+    <ul>
+        {% for record in records %}
+            <li>{{ record.name }} - {{ record.desc }} 
+                <a href="{% url 'edit' pk=record.pk %}">Edit</a>
+                <a href="{% url 'delete' pk=record.pk %}">Delete</a>
+            </li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'create' %}">Create New Record</a>
+</body>
+</html>
